@@ -1,4 +1,11 @@
-Wiki_how_clone
+QAA
+--Questions And Answers--
+(Wiki_how_clone/Stack Overflow Clone)
 By Marina Neumann
+Copyright 2014
+
+This program will:
+  -Allow users to sign up, log in and ask questions.
+
 
 
