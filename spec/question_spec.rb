@@ -5,4 +5,6 @@ describe Question do
   it{should validate_uniqueness_of :question}
 
   it{should belong_to :user}
+  it{should have_many :answers}
+
 end
