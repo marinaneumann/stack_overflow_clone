@@ -1,1 +1,15 @@
 <h1><%=@question.question%></h1>
+
+
+
+
+
+
+
+
+
+<% if current_user != nil && current_user.id == @question.user_id %>
+  <p><%= link_to "Delete", question_path(@question), method: "delete", :class => 'btn btn-danger' %></p>
+<% end %>
+
+<p><%= link_to 'Home', questions_path %>

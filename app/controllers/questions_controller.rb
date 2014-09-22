@@ -21,6 +21,13 @@ class QuestionsController <ApplicationController
     @question = Question.find(params[:id])
   end
 
+  def destroy
+    @question = Question.find(params[:id])
+    @question.destroy
+    flash[:notice]= "Question Destroyed"
+    redirect_to questions_path(current_user)
+  end
+
 private
   def question_params
     params.require(:question).permit(:question, :user_id).merge(:user_id => current_user.id)
