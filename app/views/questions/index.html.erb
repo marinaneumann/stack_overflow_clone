@@ -1,1 +1,12 @@
-<h1>Hey</h1>
+<h1>QAA</h1>
+<p><em>Questions and Answers</em></p>
+
+<%if current_user != nil%>
+ <p><%=link_to 'Add Question', new_question_path %></p>
+<% end %>
+
+<ul>
+<% @questions.each do |question| %>
+    <li><%=link_to question.question, question_path(question.id)%></li>
+<% end %>
+</ul>

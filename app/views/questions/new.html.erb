@@ -1,0 +1,15 @@
+<h1>Add Question</h1>
+
+<%=render('layouts/errors', :object => @question)%>
+
+<%= form_for(@question) do |f| %>
+  <%= f.label :question %>
+    <%= f.text_area :question, :autofocus=>true %>
+
+  <%= f.submit(:class => "btn btn-primary") %>
+<% end %>
+
+
+
+
+<p><%= link_to 'Home Page', questions_path %></p>
