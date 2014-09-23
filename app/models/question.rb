@@ -3,5 +3,5 @@ class Question <ActiveRecord::Base
   validates_uniqueness_of :question
 
   belongs_to :user
-  has_many :answers
+  has_many :answers, :dependent => :destroy
 end

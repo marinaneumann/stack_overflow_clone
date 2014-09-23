@@ -4,7 +4,8 @@ class QuestionsController <ApplicationController
   end
 
   def new
-    @question = Question.new
+    current_user = User.find(session[:user_id])
+    @question = current_user.questions.new
   end
 
   def create
@@ -19,6 +20,7 @@ class QuestionsController <ApplicationController
 
   def show
     @question = Question.find(params[:id])
+    @answers = @question.answers
   end
 
   def destroy
