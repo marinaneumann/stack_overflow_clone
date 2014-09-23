@@ -23,6 +23,17 @@ class AnswersController <ApplicationController
     end
   end
 
+  def show
+    @question = Question.find(params[:question_id])
+    @answer = @question.answers.find(params[:id])
+  end
+
+  def destroy
+    @answer = Answer.find(params[:id])
+    @answer.destroy
+    redirect_to question_path
+  end
+
 private
   def answer_params
     params.require(:answer).permit(:question_id, :user_id, :answer).merge(:user_id => current_user.id, :question_id => @question.id)
