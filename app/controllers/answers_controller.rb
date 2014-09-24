@@ -31,7 +31,7 @@ class AnswersController <ApplicationController
   def destroy
     @answer = Answer.find(params[:id])
     @answer.destroy
-    redirect_to question_path
+    redirect_to questions_path
   end
 
 private
